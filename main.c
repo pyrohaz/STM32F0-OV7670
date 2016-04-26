@@ -41,6 +41,12 @@ void SysTick_Handler(void){
 	MSec++;
 }
 
+/*
+ *
+ * The bit banged I2C is NOT my implementation. I ported it from the same files as "Sensor_config.h" as I couldn't
+ * manage to get the actual I2C on the STM32 to work.
+ *
+ */
 void Delayus(uint32_t D){
 	D*=50;
 	while(D--) asm volatile("nop");

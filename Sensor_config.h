@@ -1,8 +1,13 @@
+/*
+ * I found this file zipped up somewhere on the internet in a folder named: OV7670æ‘„åƒå¤´STM32é©±åŠ¨å¤§é›†åˆ
+ * If I'm not allowed to use this file, please say!
+ */
+
 #define OV7670_REG_NUM  167
 
 char OV7670_reg[OV7670_REG_NUM][2]=
 {	 
-       //ÒÔÏÂÎªOV7670 QVGA RGB565²ÎÊı  
+       //Ã’Ã”ÃÃ‚ÃÂªOV7670 QVGA RGB565Â²ÃÃŠÃ½
   	{0x3a, 0x04},
 	{0x40, 0x10},
 	{0x12, 0x14},
@@ -119,15 +124,15 @@ char OV7670_reg[OV7670_REG_NUM][2]=
 	{0x52, 0x22},
 	{0x53, 0x5e},
 	{0x54, 0x80},
-        {0x55, 0x00},//ÁÁ¶È
-        {0x56, 0x60},//¶Ô±È¶È
+        {0x55, 0x00},//ÃÃÂ¶Ãˆ
+        {0x56, 0x60},//Â¶Ã”Â±ÃˆÂ¶Ãˆ
         {0x57, 0x90},//0x40,  change according to Jim's request	
 	{0x58, 0x9e},	
 	{0x41, 0x08},
-	{0x3f, 0x05},//±ßÔµÔöÇ¿µ÷Õû
+	{0x3f, 0x05},//Â±ÃŸÃ”ÂµÃ”Ã¶Ã‡Â¿ÂµÃ·Ã•Ã»
 	{0x75, 0x05},
 	{0x76, 0xe1},
-	{0x4c, 0x0F},//ÔëÉùÒÖÖÆÇ¿¶È
+	{0x4c, 0x0F},//Ã”Ã«Ã‰Ã¹Ã’Ã–Ã–Ã†Ã‡Â¿Â¶Ãˆ
 	{0x77, 0x0a},
 	{0x3d, 0xc2},	//0xc0,
 	{0x4b, 0x09},
