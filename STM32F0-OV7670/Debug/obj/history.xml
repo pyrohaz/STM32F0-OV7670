@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc 4.9.3 mingw32 -mcpu=cortex-m0 -mthumb -Wall -ffunction-sections -g -O3 -c -DSTM32F051R8 -DSTM32F0XX_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\STM32F0-OV7670\stm32_lib -I..\..\..\workspace\STM32F0-OV7670 -I..\..\..\workspace -I..\..\..\workspace\Fonts -I..\..\..\workspace\STM32F0-OV7670\cmsis_core -I..\..\..\workspace\STM32F0-OV7670\cmsis_boot -I..\..\..\workspace\STM32F0-OV7670\stm32_lib\inc -I..\..\..">
+      <target file="stm32f0xx_syscfg.o" lastModified="154542abf31">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_syscfg.c" lastModified="1545426a49d"/>
+      </target>
       <target file="stm32f0xx_spi.o" lastModified="154537392a1">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_spi.c" lastModified="14f361234d8"/>
       </target>
@@ -19,8 +22,14 @@
       <target file="stm32f0xx_rcc.o" lastModified="15453737fd3">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_rcc.c" lastModified="14f361234d8"/>
       </target>
-      <target file="main.o" lastModified="15453ac62b5">
-         <source file="..\..\..\main.c" lastModified="15453ac59b6"/>
+      <target file="stm32f0xx_misc.o" lastModified="154542ac0eb">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_misc.c" lastModified="154542602f3"/>
+      </target>
+      <target file="main.o" lastModified="154543b58b9">
+         <source file="..\..\..\main.c" lastModified="154543b4ddf"/>
+      </target>
+      <target file="stm32f0xx_exti.o" lastModified="154542abd6f">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_exti.c" lastModified="1545425f538"/>
       </target>
       <target file="startup_stm32f0xx.o" lastModified="15453739070">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="14f361234d8"/>
@@ -28,11 +37,11 @@
       <target file="system_stm32f0xx_temp.o" lastModified="15453739680">
          <source file="..\..\..\cmsis_boot\system_stm32f0xx_temp.c" lastModified="14f361234d8"/>
       </target>
-      <target file="stm32f0xx_i2c.o" lastModified="154537394d1">
-         <source file="..\..\..\stm32_lib\src\stm32f0xx_i2c.c" lastModified="1544f596885"/>
-      </target>
       <target file="ILI9163.o" lastModified="15453738cc9">
          <source file="..\..\..\ILI9163.c" lastModified="15450206bfa"/>
+      </target>
+      <target file="stm32f0xx_i2c.o" lastModified="154537394d1">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_i2c.c" lastModified="1544f596885"/>
       </target>
    </processor>
 </history>

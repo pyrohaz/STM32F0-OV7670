@@ -1,6 +1,9 @@
 #include <stm32f0xx_spi.h>
 #include <stm32f0xx_rcc.h>
 #include <stm32f0xx_gpio.h>
+#include <stm32f0xx_exti.h>
+#include <stm32f0xx_misc.h>
+#include <stm32f0xx_syscfg.h>
 #include "Sensor_config.h"
 #include "ov7670reg.h"
 #include "ILI9163.h"
@@ -200,18 +203,58 @@ uint8_t C_Init(void){
 		if(!C_Read(0x6B, &V)) return 0;
 		if(!C_Write(0x6B, V|(1<<7))) return 0;
 
-		if(!C_Read(REG_CLKRC, &V)) return 0;
-		if(!C_Write(REG_CLKRC, (V&~(0x3F)) | 0x2)) return 0;
+		//if(!C_Read(REG_CLKRC, &V)) return 0;
+		//if(!C_Write(REG_CLKRC, (V&~(0x3F)) | 0x2)) return 0;
 	}
 
 	return 1;
 }
 
-#define NO_SCALE
-//#define PIXEL_SKIP
+volatile uint8_t GetFrame = 0;
+void EXTI0_1_IRQHandler(void){
+	static uint8_t GrabFrame = 0;
+	if(EXTI_GetITStatus(EXTI_Line0)){
+		EXTI_ClearITPendingBit(EXTI_Line0);
+
+		//Well synchronized
+		/*if(GPIO_ReadInputDataBit(GPIOC, C_VSYNC)){ //Rising edge
+			if(GrabFrame){
+				GrabFrame = 0;
+				GetFrame = 0;
+			}
+			if(GetFrame){
+				GrabFrame = 1;
+				GPIO_ResetBits(GPIOC, C_WRST | C_WR);
+			}
+		}
+		else{ //Falling edge
+			if(GrabFrame){
+				GPIO_SetBits(GPIOC, C_WRST | C_WR);
+			}
+		}*/
+
+		//Fast and sloppy, can overrun!
+		if(GPIO_ReadInputDataBit(GPIOC, C_VSYNC)){ //Rising edge
+			if(GetFrame){
+				GetFrame = 0;
+				GPIO_ResetBits(GPIOC, C_WRST | C_WR);
+			}
+		}
+		else{ //Falling edge
+			if(!GetFrame){
+				GPIO_SetBits(GPIOC, C_WRST | C_WR);
+			}
+		}
+	}
+}
+
+//#define NO_SCALE
+#define PIXEL_SKIP
 //#define PIXMEM
 
 GPIO_InitTypeDef G;
+NVIC_InitTypeDef N;
+EXTI_InitTypeDef E;
 
 uint16_t pbuf[32][40];
 
@@ -219,7 +262,7 @@ int main(void)
 {
 	RCC_SYSCLKConfig(RCC_SYSCLKSource_HSI);
 	RCC_PLLCmd(DISABLE);
-	RCC_PLLConfig(RCC_PLLSource_HSI_Div2, RCC_PLLMul_16);
+	RCC_PLLConfig(RCC_PLLSource_HSI_Div2, RCC_PLLMul_12);
 	RCC_PLLCmd(ENABLE);
 	while(!RCC_GetFlagStatus(RCC_FLAG_PLLRDY));
 	RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
@@ -231,6 +274,7 @@ int main(void)
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOB, ENABLE);
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOC, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 
 	G.GPIO_Pin = C_SCL | C_SDA;
 	G.GPIO_Mode = GPIO_Mode_OUT;
@@ -256,6 +300,19 @@ int main(void)
 	G.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOC, &G);
 
+	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource0);
+
+	N.NVIC_IRQChannel = EXTI0_1_IRQn;
+	N.NVIC_IRQChannelCmd = ENABLE;
+	N.NVIC_IRQChannelPriority = 0;
+	NVIC_Init(&N);
+
+	E.EXTI_Line = EXTI_Line0;
+	E.EXTI_LineCmd = ENABLE;
+	E.EXTI_Mode = EXTI_Mode_Interrupt;
+	E.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
+	EXTI_Init(&E);
+
 	while(!C_Init());
 
 	int32_t x, y, n;
@@ -270,20 +327,21 @@ int main(void)
 	{
 
 		mss = MSec;
-		//GPIO_WriteBit(GPIOC, GPIO_Pin_12, c^=1);
-		GPIO_ResetBits(GPIOC, C_WRST | GPIO_Pin_12);
-		while(!GPIO_ReadInputDataBit(GPIOC, C_VSYNC));
-		GPIO_SetBits(GPIOC, C_WRST);
-		GPIO_ResetBits(GPIOC, C_WR);
-		while(GPIO_ReadInputDataBit(GPIOC, C_VSYNC));
-		GPIO_SetBits(GPIOC, GPIO_Pin_12);
-		GPIO_SetBits(GPIOC, C_WR);
 
+
+		GetFrame = 1;
+		GPIO_ResetBits(GPIOC, GPIO_Pin_12);
+		while(GetFrame);
+		GPIO_SetBits(GPIOC, GPIO_Pin_12);
+
+		//Reset read pointer
 		GPIO_ResetBits(GPIOC, C_RRST);
 		GPIO_ResetBits(GPIOC, C_RCK);
 		GPIO_SetBits(GPIOC, C_RCK);
+		GPIO_SetBits(GPIOC, C_RCK);
 		GPIO_SetBits(GPIOC, C_RRST);
 
+		//Initialize LCD for data stream
 		SetAddr(0, 0, XPix-1, YPix-1);
 		WriteCS(0);
 		WriteAO(1);

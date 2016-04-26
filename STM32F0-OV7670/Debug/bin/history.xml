@@ -1,18 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="5.2.1 -mcpu=cortex-m0 -mthumb -g -nostartfiles -Map=STM32F0-OV7670.map -O3 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\STM32F0-OV7670 -TC:\CooCox\CoIDE\configuration\ProgramData\STM32F0-OV7670/arm-gcc-link.ld -g">
-      <target file="STM32F0-OV7670.elf" lastModified="15453ac66c1">
+      <target file="STM32F0-OV7670.elf" lastModified="154543b5dff">
          <source file="..\obj\stm32f0xx_rcc.o" lastModified="15453737fd3"/>
          <source file="..\obj\HFunc.o" lastModified="1545373831f"/>
          <source file="..\obj\GFXC.o" lastModified="154537389ca"/>
          <source file="..\obj\ILI9163.o" lastModified="15453738cc9"/>
-         <source file="..\obj\main.o" lastModified="15453ac62b5"/>
+         <source file="..\obj\main.o" lastModified="154543b58b9"/>
          <source file="..\obj\startup_stm32f0xx.o" lastModified="15453739070"/>
          <source file="..\obj\stm32f0xx_spi.o" lastModified="154537392a1"/>
          <source file="..\obj\stm32f0xx_i2c.o" lastModified="154537394d1"/>
          <source file="..\obj\system_stm32f0xx_temp.o" lastModified="15453739680"/>
          <source file="..\obj\stm32f0xx_gpio.o" lastModified="1545373987c"/>
+         <source file="..\obj\stm32f0xx_exti.o" lastModified="154542abd6f"/>
          <source file="..\obj\Fonts.o" lastModified="15453739a9b"/>
+         <source file="..\obj\stm32f0xx_syscfg.o" lastModified="154542abf31"/>
+         <source file="..\obj\stm32f0xx_misc.o" lastModified="154542ac0eb"/>
       </target>
    </processor>
 </history>
