@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I..\..\..\workspace\STM32F0-OV7670\stm32_lib /I..\..\..\workspace\STM32F0-OV7670 /I..\..\..\workspace /I..\..\..\workspace\Fonts /I..\..\..\workspace\STM32F0-OV7670\cmsis_core /I..\..\..\workspace\STM32F0-OV7670\cmsis_boot /I..\..\..\workspace\STM32F0-OV7670\stm32_lib\inc /I..\..\..">
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_rcc.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h" lastModified="1544f59687a">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="14f361234d8">
+      </source>
+      <source file="..\..\..\..\Fonts\Fonts.c" lastModified="14d6479cef0">
+         <include file="..\..\..\..\Fonts\Fonts.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_gpio.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f0xx.h" lastModified="14f361238c0">
+         <include file="..\..\..\cmsis_core\core_cm0.h"/>
+         <include file="..\..\..\cmsis_boot\system_stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_i2c.c" lastModified="1544f596885">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\HFunc.h" lastModified="154501f86d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_core\core_cmInstr.h" lastModified="14f36123ca8">
+      </source>
+      <source file="..\..\..\HFunc.c" lastModified="154501fbea6">
+         <include file="..\..\..\HFunc.h"/>
+         <include file="..\..\..\HFunc.h"/>
+      </source>
+      <source file="..\..\..\ILI9163.h" lastModified="1544feb7af4">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h"/>
+      </source>
+      <source file="..\..\..\ILI9163.c" lastModified="15450206bfa">
+         <include file="..\..\..\ILI9163.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f0xx_temp.c" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_core\core_cm0.h" lastModified="14f361238c0">
+         <include file="..\..\..\cmsis_core\core_cmInstr.h"/>
+         <include file="..\..\..\cmsis_core\core_cmFunc.h"/>
+      </source>
+      <source file="..\..\..\GFXC.h" lastModified="1545065e2a6">
+         <include file="..\..\..\ILI9163.h"/>
+         <include file="..\..\..\..\Fonts\Fonts.h"/>
+         <include file="..\..\..\HFunc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_core\core_cmFunc.h" lastModified="14f36123ca8">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f0xx.h" lastModified="14f361234d8">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_spi.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\GFXC.c" lastModified="1545067776d">
+         <include file="..\..\..\GFXC.h"/>
+      </source>
+      <source file="..\..\..\..\Fonts\Fonts.h" lastModified="14e6f601648">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\ov7670reg.h" lastModified="1545005d415">
+      </source>
+   </includePath>
+   <includePath signature="/I..\..\..\workspace\STM32F0-OV7670\stm32_lib /I..\..\..\workspace\STM32F0-OV7670 /I..\..\..\workspace /I..\..\..\workspace\STM32F0-OV7670\cmsis_core /I..\..\..\workspace\STM32F0-OV7670\cmsis_boot /I..\..\..\workspace\STM32F0-OV7670\stm32_lib\inc /I..\..\..">
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_rcc.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h" lastModified="1544f59687a">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="14f361234d8">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_gpio.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_i2c.c" lastModified="1544f596885">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\ILI9163.h" lastModified="1544feb7af4">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f0xx_temp.c" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f0xx.h" lastModified="14f361234d8">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_spi.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+   </includePath>
+   <includePath signature="/I..\..\..\workspace\STM32F0-OV7670\stm32_lib /I..\..\..\workspace\STM32F0-OV7670 /I..\..\..\workspace /I..\..\..\workspace\STM32F0-OV7670\cmsis_core /I..\..\..\workspace\STM32F0-OV7670\cmsis_boot /I..\..\.. /I..\..\..\workspace\STM32F0-OV7670\stm32_lib\inc">
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_rcc.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h" lastModified="1544f59687a">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="14f361234d8">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_gpio.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_i2c.c" lastModified="1544f596885">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_i2c.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f0xx_temp.c" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_gpio.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f0xx.h" lastModified="14f361234d8">
+      </source>
+      <source file="..\..\..\stm32_lib\src\stm32f0xx_spi.c" lastModified="14f361234d8">
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_spi.h"/>
+         <include file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\stm32_lib\inc\stm32f0xx_rcc.h" lastModified="14f361234d8">
+         <include file="..\..\..\cmsis_boot\stm32f0xx.h"/>
+      </source>
+   </includePath>
+</dependencies>

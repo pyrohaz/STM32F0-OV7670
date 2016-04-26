@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc 4.9.3 mingw32 -mcpu=cortex-m0 -mthumb -Wall -ffunction-sections -g -O3 -c -DSTM32F051R8 -DSTM32F0XX_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\STM32F0-OV7670\stm32_lib -I..\..\..\workspace\STM32F0-OV7670 -I..\..\..\workspace -I..\..\..\workspace\Fonts -I..\..\..\workspace\STM32F0-OV7670\cmsis_core -I..\..\..\workspace\STM32F0-OV7670\cmsis_boot -I..\..\..\workspace\STM32F0-OV7670\stm32_lib\inc -I..\..\..">
+      <target file="stm32f0xx_spi.o" lastModified="154537392a1">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_spi.c" lastModified="14f361234d8"/>
+      </target>
+      <target file="HFunc.o" lastModified="1545373831f">
+         <source file="..\..\..\HFunc.c" lastModified="154501fbea6"/>
+      </target>
+      <target file="GFXC.o" lastModified="154537389ca">
+         <source file="..\..\..\GFXC.c" lastModified="1545067776d"/>
+      </target>
+      <target file="stm32f0xx_gpio.o" lastModified="1545373987c">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_gpio.c" lastModified="14f361234d8"/>
+      </target>
+      <target file="Fonts.o" lastModified="15453739a9b">
+         <source file="..\..\..\..\Fonts\Fonts.c" lastModified="14d6479cef0"/>
+      </target>
+      <target file="stm32f0xx_rcc.o" lastModified="15453737fd3">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_rcc.c" lastModified="14f361234d8"/>
+      </target>
+      <target file="main.o" lastModified="15453ac62b5">
+         <source file="..\..\..\main.c" lastModified="15453ac59b6"/>
+      </target>
+      <target file="startup_stm32f0xx.o" lastModified="15453739070">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="14f361234d8"/>
+      </target>
+      <target file="system_stm32f0xx_temp.o" lastModified="15453739680">
+         <source file="..\..\..\cmsis_boot\system_stm32f0xx_temp.c" lastModified="14f361234d8"/>
+      </target>
+      <target file="stm32f0xx_i2c.o" lastModified="154537394d1">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_i2c.c" lastModified="1544f596885"/>
+      </target>
+      <target file="ILI9163.o" lastModified="15453738cc9">
+         <source file="..\..\..\ILI9163.c" lastModified="15450206bfa"/>
+      </target>
+   </processor>
+</history>
